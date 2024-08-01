@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voiture - Home</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <style>
+        /* General Body Styles */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            color: #e0e0e0;
+            background-color: #121212;
+        }
+
+        /* Navigation Bar Styles */
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #1f1f1f;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            /* padding-bottom: -00px; */
+        }
+
+        .navbar a {
+            color: #e0e0e0;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1rem;
+        }
+
+        .navbar a:hover {
+            color: #ff5722;
+        }
+
+        /* Hero Section Styles */
+        .hero {
+            padding-top: 18px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 10vh; /* Increased height */
+            background-image: url('car-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            color: #fff;
+            margin-top: 60px; /* To account for fixed navbar */
+            padding-top: -100px;
+            padding-bottom: 50px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0;
+            padding-top: 40px; /* Moves the heading further to the top */
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin: 10px 0 20px;
+        }
+
+        /* Image Carousel Styles */
+.carousel {
+    position: relative;
+    max-width: 70%; /* Adjust width as needed */
+    margin: 0 auto 2rem; /* Remove negative margin */
+    overflow: hidden;
+    padding-top: 20px; /* Reduced padding */
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-image {
+    position: relative;
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.carousel-image img {
+    width: 100%;
+    height: 450px; /* Increased height */
+    object-fit: cover; /* Ensure the image covers the area and maintains aspect ratio */
+}
+
+.carousel-title {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #1f1f1f;
+    padding: 1rem;
+    text-align: center;
+    color: #e0e0e0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <!-- <a href="/homepage/home.html">Home</a> -->
+        <a href="/quiz/quiz.html">Car Quiz</a>
+        <a href="/game/game.html">Car Game</a>
+        <a href="/car_parts/parts.html">3D Model of the Car and Car Parts</a>
+        <a href="/Hist/history.html">History and Evolution of Cars</a>
+    </nav>
+
+    <section class="hero">
+        <h1>Welcome to Voiture</h1>
+        <p>Your ultimate destination for everything about cars.</p>
+    </section>
+
+    <section class="carousel"> <div class="carousel-images"> <div class="carousel-image"> <a href="/quiz/quiz.html"> <img src="/homepage/quiz.webp" alt="Car Quiz"> <div class="carousel-title">Car Quiz</div> </a> </div> <div class="carousel-image"> <a href="/game/game.html"> <img src="/homepage/car-game.jpg" alt="Car Game"> <div class="carousel-title">Car Game</div> </a> </div> <div class="carousel-image"> <a href="/car_parts/parts.html"> <img src="/homepage/car-parts.png" alt="3D Model of the Car and Car Parts"> <div class="carousel-title">3D Model of the Car and Car Parts</div> </a> </div> <div class="carousel-image"> <a href="/Hist/history.html"> <img src="/homepage/car-hist.jpg" alt="History and Evolution of Cars"> <div class="carousel-title">History and Evolution of Cars</div> </a> </div> </div> </section>
+
+    <div>
+            <p>&copy; 2024 Voiture. All rights reserved.</p>
+    </div>
+
+    <script>
+        // JavaScript for Carousel
+        const images = document.querySelector('.carousel-images');
+        let index = 0;
+
+        function showNextImage() {
+            index++;
+            if (index >= images.children.length) {
+                index = 0;
+            }
+            images.style.transform = `translateX(${-index * 100}%)`;
+        }
+
+        setInterval(showNextImage, 3000); // Change image every 3 seconds
+    </script>
+</body>
+</html>
